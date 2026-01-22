@@ -18,12 +18,13 @@ const navigate=useNavigate()
     console.log(data)
     const token=JSON.parse(localStorage.getItem("token"))
         console.log(token)
-    alert("Data Submitted Successfully")
-     const result=axios.post("http://localhost:8090/users/",data,{
+   
+     const result=axios.post("https://task-management-backend-tgvp.onrender.com/users/",data,{
         headers:{
             'Authorization':`Bearer ${token}`
         }
      })
+      alert("Data Submitted Successfully")
      console.log(result)
      navigate("/oneuser")
     setData({

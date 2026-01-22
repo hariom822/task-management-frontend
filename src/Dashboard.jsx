@@ -48,7 +48,7 @@ const Dashboard = () => {
     try {
       console.log("theme",theme)
       const res = await axios.post(
-        "http://localhost:8090/users/theme",
+        "https://task-management-backend-tgvp.onrender.com/users/theme",
         { color: theme }, 
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -64,7 +64,7 @@ const Dashboard = () => {
 
   const fetchUsers = async () => {
     const res = await axios.get(
-      "http://localhost:8090/users/all",
+      "https://task-management-backend-tgvp.onrender.com/users/all",
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -75,7 +75,7 @@ const Dashboard = () => {
      const fetchTasks = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8090/task/findoneuser",
+          "https://task-management-backend-tgvp.onrender.com/task/findoneuser",
           {
             headers: {
               Authorization: `Bearer ${token}`,

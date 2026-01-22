@@ -26,7 +26,7 @@ const User = () => {
   const fetchUser = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8090/users/oneuser",
+        "https://task-management-backend-tgvp.onrender.com/users/oneuser",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -43,7 +43,7 @@ const User = () => {
       console.log("current theme:", theme);
 
       const res = await axios.post(
-        "http://localhost:8090/users/theme",
+        "https://task-management-backend-tgvp.onrender.com/users/theme",
         { color: theme }, // same as Header
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -74,7 +74,7 @@ const User = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:8090/users/delete/${id}`,
+        `https://task-management-backend-tgvp.onrender.com/users/delete/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

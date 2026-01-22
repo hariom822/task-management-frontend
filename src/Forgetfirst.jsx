@@ -15,7 +15,7 @@ const Forgetfirst = () => {
     setError(arr);
 
     if (Object.keys(arr).length === 0) {
-      const res = await axios.post("http://localhost:8090/users/otp", data);
+      const res = await axios.post("https://task-management-backend-tgvp.onrender.com/users/otp", data);
       console.log(res);
         alert("OTP sent to your email");
         navigate("/forget");

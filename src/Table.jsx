@@ -26,7 +26,7 @@ const Table = () => {
     try {
       console.log("theme",theme)
       const res = await axios.post(
-        "http://localhost:8090/users/theme",
+        "https://task-management-backend-tgvp.onrender.com/users/theme",
         { color: theme }, 
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -42,7 +42,7 @@ const Table = () => {
 
     const fetchUsers = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    const res = await axios.get("http://localhost:8090/users/all", {
+    const res = await axios.get("https://task-management-backend-tgvp.onrender.com/users/all", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setUsers(res.data.users || []);

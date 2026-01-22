@@ -11,7 +11,7 @@ const Addtask = () => {
     assign_to: ""
   });
   const [selectedUser, setSelectedUser] = useState("");
-  const [loading, setLoading] = useState(false); // <- Loader state
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   useEffect(() => {

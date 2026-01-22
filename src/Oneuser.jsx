@@ -20,7 +20,7 @@ const Oneuser = () => {
     const fetchTasks = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8090/task/findoneuser",
+          "https://task-management-backend-tgvp.onrender.com/task/findoneuser",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ const Oneuser = () => {
   const handleDelete = async (id) => {
     const token = JSON.parse(localStorage.getItem("token"));
     try {
-      await axios.delete(`http://localhost:8090/task/delete/${id}`, {
+      await axios.delete(`https://task-management-backend-tgvp.onrender.com/task/delete/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

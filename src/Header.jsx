@@ -27,7 +27,7 @@ const Header = () => {
     try {
       console.log(theme)
       const res = await axios.post(
-        "http://localhost:8090/users/theme",
+        "https://task-management-backend-tgvp.onrender.com/users/theme",
         { color: theme }, 
         {
           headers: { Authorization: `Bearer ${token}` },

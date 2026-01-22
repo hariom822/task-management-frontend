@@ -57,7 +57,7 @@ const Center = () => {
   console.log("userTasks",tasks)
       try {
         const res = await axios.get(
-          "http://localhost:8090/task/findoneuser",
+          "https://task-management-backend-tgvp.onrender.com/task/findoneuser",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -84,7 +84,7 @@ const Center = () => {
     try {
       console.log("theme",theme)
       const res = await axios.post(
-        "http://localhost:8090/users/theme",
+        "https://task-management-backend-tgvp.onrender.com/users/theme",
         { color: theme }, 
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -108,7 +108,7 @@ const Center = () => {
   }
   const token = JSON.parse(localStorage.getItem("token"));
 
-  await axios.post("http://localhost:8090/users/send", data, {
+  await axios.post("https://task-management-backend-tgvp.onrender.com/users/send", data, {
     headers: { Authorization: `Bearer ${token}` },
   });
 
@@ -123,7 +123,7 @@ const Center = () => {
 
   const fetchUsers = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    const res = await axios.get("http://localhost:8090/users/all", {
+    const res = await axios.get("https://task-management-backend-tgvp.onrender.com/users/all", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setUsers(res.data.users || []);
@@ -131,7 +131,7 @@ const Center = () => {
 
   const fetchTasks = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    const res = await axios.get("http://localhost:8090/task/all", {
+    const res = await axios.get("https://task-management-backend-tgvp.onrender.com/task/all", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setTasks(res.data.tasks || []);
@@ -167,7 +167,7 @@ const Center = () => {
       const token = JSON.parse(localStorage.getItem("token"));
 
       await axios.post(
-        `http://localhost:8090/task/update/${currentTaskId}`,
+        `https://task-management-backend-tgvp.onrender.com/task/update/${currentTaskId}`,
         {
           task: task.task,
           date: task.date,
@@ -207,7 +207,7 @@ const Center = () => {
       const token = JSON.parse(localStorage.getItem("token"));
       try {
         await axios.post(
-          `http://localhost:8090/task/update/${TaskId}`,
+          `https://task-management-backend-tgvp.onrender.com/task/update/${TaskId}`,
           {status},
           {
             headers: {
@@ -228,7 +228,7 @@ const Center = () => {
   const deleteTask = async (taskId) => {
     const token = JSON.parse(localStorage.getItem("token"));
     await axios.delete(
-      `http://localhost:8090/task/delete/${taskId}`,
+      `https://task-management-backend-tgvp.onrender.com/task/delete/${taskId}`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
     setTasks((prev) => prev.filter((t) => t._id !== taskId));
@@ -239,7 +239,7 @@ const handleDrop = async (e, newUserId) => {
   if (!taskId) return;
   const token = JSON.parse(localStorage.getItem("token"));
   await axios.post(
-    `http://localhost:8090/task/update/${taskId}`,
+    `https://task-management-backend-tgvp.onrender.com/task/update/${taskId}`,
     { assign_to: newUserId },
     { headers: { Authorization: `Bearer ${token}` } }
   );
@@ -268,7 +268,7 @@ const handleDrop = async (e, newUserId) => {
     const token = JSON.parse(localStorage.getItem("token"));
 
     const res = await axios.post(
-      "http://localhost:8090/task",
+      "https://task-management-backend-tgvp.onrender.com/task",
       formData,
       { headers: { Authorization: `Bearer ${token}` } }
 );

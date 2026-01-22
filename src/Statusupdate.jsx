@@ -25,7 +25,7 @@ const Statusupdate = () => {
       const token = JSON.parse(localStorage.getItem("token"));
       try {
         await axios.post(
-          `http://localhost:8090/task/update/${id}`,
+          `https://task-management-backend-tgvp.onrender.com/task/update/${id}`,
           task,
           {
             headers: {

@@ -25,7 +25,7 @@ const Reset = () => {
         alert("New Password and Confirm Password do not match");
         return;
       }
-      const res = await axios.post("http://localhost:8090/users/reset", data);
+      const res = await axios.post("https://task-management-backend-tgvp.onrender.com/users/reset", data);
       console.log(res);
       alert("Password reset successful");
       navigate("/oneuser");

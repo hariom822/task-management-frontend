@@ -23,7 +23,7 @@ const Calendar = () => {
   const fetchTheme = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:8090/users/theme",
+        "https://task-management-backend-tgvp.onrender.com/users/theme",
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -38,7 +38,7 @@ const Calendar = () => {
   const fetchTasks = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8090/task/findoneuser",
+        "https://task-management-backend-tgvp.onrender.com/task/findoneuser",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

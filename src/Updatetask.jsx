@@ -25,7 +25,7 @@ const Updatetask = () => {
       console.log(task);
       try {
         await axios.post(
-          `http://localhost:8090/task/update/${taskid}`,
+          `https://task-management-backend-tgvp.onrender.com/task/update/${taskid}`,
           task,
           {
             headers: {
