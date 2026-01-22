@@ -14,7 +14,7 @@ const navigate=useNavigate()
     if(!(data.name&&data.email&&data.phone)){
       alert("all filed are requride")
     }
-    await axios.post("http://localhost:8090/users/", data)
+    await axios.post("https://task-management-backend-tgvp.onrender.com/users/", data)
     console.log(data)
     const token=JSON.parse(localStorage.getItem("token"))
         console.log(token)
