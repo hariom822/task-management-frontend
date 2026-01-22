@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import api from "./api";
+
 import { Link,useNavigate } from "react-router-dom";
 const Login = () => {
   const [form, setForm] = useState({
@@ -17,7 +19,8 @@ const Login = () => {
 
     if (Object.keys(arr).length === 0) {
       try {
-        const user = await axios.post("http://localhost:8090/users/login", form);
+        
+      const user = await api.post("/users/login", form);
         console.log(user.data);
         localStorage.setItem("token", JSON.stringify(user.data.token));
         localStorage.setItem("user", JSON.stringify(user.data.id));
